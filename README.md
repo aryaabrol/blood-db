@@ -35,7 +35,7 @@ Included features are:
         </p>
 6. The Explore fragments where the user can view all the donors and requests:
          <p align="center">
-    <image src="images/7(1).png" width="200">
+    <image src="images/7%20(1).png" width="200">
         <image src="images/8.png" width="200">
         </p>
         
