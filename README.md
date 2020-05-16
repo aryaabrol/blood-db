@@ -1,3 +1,7 @@
+<p align="center">
+    <image src="images/logo.png" width="200">
+        </p>
+
 # About blood-db
 Blood-db is a responsive android application that maintains a record of blood donors and their blood groups along with requests made by people to the blood 
 donors for emergency blood requirements.
