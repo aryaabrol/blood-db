@@ -13,7 +13,7 @@ Included features are:
 
 ### Working of the app
 1. The landing page of the app gives description about the application:
-    ![](images/1.png)
+    <image src="images/1.png" width="100">
 #### Tools used
 1. Realtime Database by firebase
 2. Firebase Authentication
