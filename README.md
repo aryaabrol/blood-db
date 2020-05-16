@@ -12,8 +12,8 @@ Included features are:
 5. Find donors in your own city
 
 ### Working of the app
-1. The landing page of the app gives description about the application:
-    <image src="images/1.png" width="100">
+1. The landing page of the app gives description about the application:\n
+    <image src="images/1.png" width="300">
 #### Tools used
 1. Realtime Database by firebase
 2. Firebase Authentication
