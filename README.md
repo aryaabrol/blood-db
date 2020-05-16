@@ -13,7 +13,9 @@ Included features are:
 
 ### Working of the app
 1. The landing page of the app gives description about the application:\n
-    <image src="images/1.png" width="300">
+    <p align="center">
+    <image src="images/1.png" width="200">
+        </p>
 #### Tools used
 1. Realtime Database by firebase
 2. Firebase Authentication
