@@ -11,9 +11,14 @@ Included features are:
 4. Make Requests
 5. Find donors in your own city
 
-### Tools used
+### Working of the app
+1. The landing page of the app gives description about the application:
+    ![](images/1.png)
+#### Tools used
 1. Realtime Database by firebase
 2. Firebase Authentication
 3. Firebase UI features
 4. Android Studio IDE
 5. Adobe XD for UI design
+
+
