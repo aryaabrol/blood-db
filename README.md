@@ -12,10 +12,33 @@ Included features are:
 5. Find donors in your own city
 
 ### Working of the app
-1. The landing page of the app gives description about the application:\n
+1. The landing page of the app gives description about the application:
     <p align="center">
     <image src="images/1.png" width="200">
         </p>
+2. The Register page:
+    <p align="center">
+    <image src="images/2.png" width="200">
+        </p>
+3. The login page,used to log in to your account:
+        <p align="center">
+    <image src="images/3.png" width="200">
+        </p>
+4. The home page fragment, where the user can view the total donors and requests made and get submit a donor request:
+      <p align="center">
+    <image src="images/4.png" width="200">
+        </p> 
+5. The Request and the donor application forms where the user adds necessary details:
+          <p align="center">
+    <image src="images/5.png" width="200">
+        <image src="images/6.png" width="200">
+        </p>
+6. The Explore fragments where the user can view all the donors and requests:
+         <p align="center">
+    <image src="images/7(1).png" width="200">
+        <image src="images/8.png" width="200">
+        </p>
+        
 #### Tools used
 1. Realtime Database by firebase
 2. Firebase Authentication
