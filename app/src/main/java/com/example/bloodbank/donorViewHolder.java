@@ -11,12 +11,14 @@ public class donorViewHolder extends RecyclerView.ViewHolder  {
     public TextView city;
     public TextView bloodGroup;
     public TextView number;
+    public View view;
     public donorViewHolder(@NonNull View itemView) {
         super(itemView);
         name=itemView.findViewById(R.id.name);
         city=itemView.findViewById(R.id.city);
         bloodGroup=itemView.findViewById(R.id.bloodgroup);
         number=itemView.findViewById(R.id.number);
+        view=itemView;
 
     }
 

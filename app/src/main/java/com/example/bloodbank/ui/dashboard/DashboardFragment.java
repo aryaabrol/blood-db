@@ -1,5 +1,8 @@
 package com.example.bloodbank.ui.dashboard;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -110,10 +114,41 @@ public class DashboardFragment extends Fragment {
         FirebaseRecyclerAdapter<donoritem, donorViewHolder> adapter=new FirebaseRecyclerAdapter<donoritem, donorViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull donorViewHolder holder, int position, @NonNull donoritem model) {
+
+                final String number=model.getPhone();
                 holder.name.setText(model.getName());
                 holder.city.setText("City: " + model.getCity());
                 holder.number.setText("Contact: "+ model.getPhone());
                 holder.bloodGroup.setText(model.getBloodGroup());
+
+                holder.view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        new AlertDialog.Builder(getContext())
+                                .setTitle("Make Call")
+                                .setMessage("Are you sure you want to make a call to the donor")
+
+                                // Specifying a listener allows you to take an action before dismissing the dialog.
+                                // The dialog is automatically dismissed when a dialog button is clicked.
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                                        intent.setData(Uri.parse("tel:"+number));
+                                        startActivity(intent);
+
+                                    }
+                                })
+
+                                // A null listener allows the button to dismiss the dialog and take no further action.
+                                .setNegativeButton("No", null)
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .show();
+
+
+
+
+                    }
+                });
             }
 
             @NonNull
