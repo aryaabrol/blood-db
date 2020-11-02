@@ -18,7 +18,7 @@ Included features are:
 ### Working of the app
 1. The landing page of the app gives description about the application:
     <p align="center">
-    <image src="images/10.png" width="200">
+    <image src="images/11.png" width="200">
         </p>
 2. The Awareness module Page:
      <p align="center">
