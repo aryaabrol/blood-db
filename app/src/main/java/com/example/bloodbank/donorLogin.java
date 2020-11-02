@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,31 +25,48 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+//import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 
 public class donorLogin extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private static final int imagerequest=234;
     private EditText name,phone,city;
     Spinner bloodGroup;
-    private Button register;
+    private Button register,upload;
     private ProgressDialog dialog;
     String bloodGroup1;
+    private Uri filePath;
+    private StorageReference mStorageRef;
+    private TextView select;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor_login);
 
+
         register= (Button) findViewById(R.id.login);
         name=(EditText) findViewById(R.id.password);
         phone=(EditText) findViewById(R.id.number);
         city=(EditText) findViewById(R.id.city);
         bloodGroup=(Spinner) findViewById(R.id.email);
+        upload=(Button)findViewById(R.id.upload);
+        select=(TextView)findViewById(R.id.textView6);
         ArrayAdapter<CharSequence> arrayAdapter=ArrayAdapter.createFromResource(this,R.array.groups,android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bloodGroup.setAdapter(arrayAdapter);
         bloodGroup.setOnItemSelectedListener(this);
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filechooser();
+            }
+        });
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +89,26 @@ public class donorLogin extends AppCompatActivity implements AdapterView.OnItemS
                 }
             }
         });
+    }
+
+    private void filechooser(){
+        Intent intent=new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select an Image"),imagerequest);
+
+    }
+
+    //handling the image chooser activity result
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == imagerequest && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            filePath = data.getData();
+            select.setTextColor(getResources().getColor(R.color.green));
+            select.setText(filePath.getLastPathSegment());
+
+        }
     }
 
     private void AddData(final String name1, final String phone1, final String city1, final String bloodGroup1) {

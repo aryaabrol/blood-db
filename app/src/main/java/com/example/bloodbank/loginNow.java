@@ -56,7 +56,8 @@ public class loginNow extends AppCompatActivity {
                                         startActivity(intent);
                                     }
                                     else{
-                                        Toast.makeText(getApplicationContext(),"NO",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(),"Invalid Credentials",Toast.LENGTH_SHORT).show();
+                                        dialog.dismiss();
                                     }
 
                                 }

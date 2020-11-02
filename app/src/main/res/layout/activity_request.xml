@@ -105,7 +105,7 @@
         android:layout_marginTop="175dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Make a request"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -15,4 +15,10 @@
         <item>AB-</item>
         <item>O-</item>
     </string-array>
+    <string name="title_activity_video1">video1</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

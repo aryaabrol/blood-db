@@ -1,5 +1,6 @@
 package com.example.bloodbank.ui.dashboard;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,8 +22,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bloodbank.R;
+import com.example.bloodbank.donorLogin;
 import com.example.bloodbank.donorViewHolder;
+import com.example.bloodbank.image;
 import com.example.bloodbank.model.donoritem;
+import com.example.bloodbank.video1;
+import com.example.bloodbank.video3;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +38,7 @@ public class DashboardFragment extends Fragment {
     private EditText search;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
+    private ProgressDialog dialog;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -44,6 +50,7 @@ public class DashboardFragment extends Fragment {
         recyclerView = root.findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
+
 
 
         search.addTextChangedListener(new TextWatcher() {
@@ -124,25 +131,31 @@ public class DashboardFragment extends Fragment {
                 holder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        new AlertDialog.Builder(getContext())
-                                .setTitle("Make Call")
-                                .setMessage("Are you sure you want to make a call to the donor")
-
-                                // Specifying a listener allows you to take an action before dismissing the dialog.
-                                // The dialog is automatically dismissed when a dialog button is clicked.
-                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        Intent intent = new Intent(Intent.ACTION_DIAL);
-                                        intent.setData(Uri.parse("tel:"+number));
-                                        startActivity(intent);
-
-                                    }
-                                })
-
-                                // A null listener allows the button to dismiss the dialog and take no further action.
-                                .setNegativeButton("No", null)
-                                .setIcon(android.R.drawable.ic_dialog_alert)
-                                .show();
+                        dialog=new ProgressDialog(getContext());
+                        dialog.setMessage("Loading");
+                        dialog.show();
+//                        new AlertDialog.Builder(getContext())
+//                                .setTitle("Make Call")
+//                                .setMessage("Are you sure you want to make a call to the donor")
+//
+//                                // Specifying a listener allows you to take an action before dismissing the dialog.
+//                                // The dialog is automatically dismissed when a dialog button is clicked.
+//                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        Intent intent = new Intent(Intent.ACTION_DIAL);
+//                                        intent.setData(Uri.parse("tel:"+number));
+//                                        startActivity(intent);
+//
+//                                    }
+//                                })
+//
+//                                // A null listener allows the button to dismiss the dialog and take no further action.
+//                                .setNegativeButton("No", null)
+//                                .setIcon(android.R.drawable.ic_dialog_alert)
+//                                .show();
+                        Intent intent=new Intent(getActivity(), image.class);
+                        startActivity(intent);
+                        dialog.dismiss();
 
 
 

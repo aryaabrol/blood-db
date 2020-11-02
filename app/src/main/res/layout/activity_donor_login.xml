@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".donorLogin"
-    android:background="@drawable/form">
+    android:background="@drawable/form"
+    tools:context=".donorLogin">
 
     <EditText
         android:id="@+id/password"
@@ -66,11 +66,24 @@
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="Upload Report"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
+
+    <Button
         android:id="@+id/login"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/button"
         android:text="Become a donor"
         android:textAllCaps="false"
@@ -80,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number" />
+        app:layout_constraintTop_toBottomOf="@+id/upload" />
 
     <TextView
         android:id="@+id/textView5"
@@ -94,5 +107,17 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="42dp"
+        android:text="No file uploaded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/upload"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

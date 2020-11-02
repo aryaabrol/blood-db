@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bloodbank">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".request"></activity>
-        <activity
-            android:name=".home"
-            android:label="@string/title_activity_home" />
+        <activity android:name=".image"></activity>
+        <activity android:name=".video4" />
+        <activity android:name=".video3" />
+        <activity android:name=".video2" />
+        <activity android:name=".chatbot" />
+        <activity android:name=".video1" />
+        <activity android:name=".request" />
+        <activity android:name=".home" />
         <activity android:name=".loginNow" />
         <activity android:name=".register" />
         <activity android:name=".donorLogin" />
