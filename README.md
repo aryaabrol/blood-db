@@ -18,30 +18,39 @@ Included features are:
 ### Working of the app
 1. The landing page of the app gives description about the application:
     <p align="center">
-    <image src="images/1.png" width="200">
+    <image src="images/10.png" width="200">
         </p>
-2. The Register page:
+2. The Awareness module Page:
+     <p align="center">
+    <image src="images/12.png" width="200">
+        </p>
+    
+3. The Register page:
     <p align="center">
     <image src="images/2.png" width="200">
         </p>
-3. The login page,used to log in to your account:
+4. The login page,used to log in to your account:
         <p align="center">
     <image src="images/3.png" width="200">
         </p>
-4. The home page fragment, where the user can view the total donors and requests made and get submit a donor request:
+5. The home page fragment, where the user can view the total donors and requests made and get submit a donor request:
       <p align="center">
-    <image src="images/4.png" width="200">
+    <image src="images/13.png" width="200">
         </p> 
-5. The Request and the donor application forms where the user adds necessary details:
+6. The Request and the donor application forms where the user adds necessary details:
           <p align="center">
     <image src="images/5.png" width="200">
         <image src="images/6.png" width="200">
         </p>
-6. The Explore fragments where the user can view all the donors and requests:
+7. The Explore fragments where the user can view all the donors and requests:
          <p align="center">
     <image src="images/7%20(1).png" width="200">
         <image src="images/8.png" width="200">
         </p>
+8.The Chatbot Module that helps user with queries
+        <p align="center">
+    <image src="images/14.png" width="200">
+        </p> 
         
 #### Tools used
 1. Realtime Database by firebase
