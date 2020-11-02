@@ -58,5 +58,7 @@ Included features are:
 3. Firebase UI features
 4. Android Studio IDE
 5. Adobe XD for UI design
+6. Blender for 3D Modelling
+7. Python for Chatbot and ML models
 
 
